@@ -36,7 +36,7 @@ jobs:
         
         #logging into docker registry
       - name: Log into registry
-        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ github.event.inputs.username }}" --password-stdin
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ github.event.inputs.username }} --password-stdin
         # logging into git hub docker registry
         # run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
 
