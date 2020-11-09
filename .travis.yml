@@ -3,7 +3,7 @@ services:
   -docker 
 
 before_install:
-  - docker build -t sreesaran/mtom-server -f Dockerfile .
+  - docker build -t $DOCKER_USERNAME/mtom-server -f Dockerfile .
 
 after_success:
   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD 
