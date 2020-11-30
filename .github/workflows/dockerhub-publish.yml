@@ -14,8 +14,8 @@ jobs:
       - name: Build and Publish Docker image to Dockerhub
         uses: ./
         with:
-          TAG: 'my-optional-tag-name'
-          DOCKERFILE_PATH: '.github/docker/Dockerfile'
+          TAG: 'latest'
+          DOCKERFILE_PATH: 'Dockerfile'
           BUILD_CONTEXT: '.'
           DOCKERHUB_REPOSITORY: 'sreesaran/mtom-server'
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
