@@ -17,5 +17,7 @@ jobs:
       - name: Build and push
         run: docker build . --file Dockerfile --tag sreesaran/mtom-server:latest
         
+        
       - name: Docker Push
         run: docker push ${{secrets.DOCKER_USERNAME}}/sreesaran
+        
