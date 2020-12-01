@@ -21,17 +21,16 @@ public class DocumentEndpoint {
 	@ResponsePayload
 	public StoreDocumentResponse storeDocument(
 			@RequestPayload StoreDocumentRequest request) throws IOException {
+		
 		Document document = request.getDocument();
-		try (InputStream in = document.getContent().getInputStream()) {
-			long counter = 0;
-			while (in.read() != -1) {
-				++counter;
-			}
-			System.out.println(String.format("received %d bytes", counter));
-		}
+
+		byte[] data = document.getContent();
+		System.out.println(String.format("received %d bytes", data.length));
+		System.out.println("data is : "+new String(data));
 		StoreDocumentResponse response = new StoreDocumentResponse();
 		response.setSuccess(true);
 		return response;
+		
 	}
 
 }
